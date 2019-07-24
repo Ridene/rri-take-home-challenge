@@ -1,0 +1,28 @@
+@import '../variables';
+
+.jt__card-container {
+  margin: 0 8px 16px 0;
+  padding: 10px;
+  display: flex;
+  border: 1px solid $jt-gray--05;
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,.5);
+  width: calc((100% / 4) - 10px);
+  flex-direction: column;
+  align-items: center;
+  &:last-child {
+
+  }
+}
+
+@media screen and (max-width: 480px)  {
+  .jt__card-container {
+    width: 100%;
+    margin: 0 0 16px 0;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px)  {
+  .jt__card-container {
+    width: calc((100% / 2) - 10px);
+  }
+}

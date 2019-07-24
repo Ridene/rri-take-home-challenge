@@ -1,0 +1,19 @@
+@import '../variables';
+
+.jt__tags-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.jt__tag-container {
+  padding: 6px 10px;
+  margin: 0 4px 8px 0;
+  display: flex;
+  border: 1px solid $jt-gray--15;
+  background-color: $jt-gray--10;
+  align-items: center;
+  border-radius: 30px;
+  p {
+    color: $jt-gray--75
+  }
+}
