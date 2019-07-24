@@ -5,7 +5,9 @@ import '../assets/styles.scss'
 class Main extends PureComponent {
     render () {
         return (
-            <List />
+          <main className='jt__main-container'>
+              <List />
+          </main>
         )
     }
 }

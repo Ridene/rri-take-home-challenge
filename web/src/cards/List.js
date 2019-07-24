@@ -22,13 +22,15 @@ class List extends PureComponent {
 
   render () {
     const { cards } = this.state
-    console.log(this.props.cards)
     if (this.props.loading) return <p>Loading</p>
 
     return (
-      <section>
+      <section className='jt__cards-container'>
         { cards.map(card =>
-          <Card card={card} key={`card-${card.id}`}/>
+          <Card
+            card={card}
+            key={`card-${card.id}`}
+          />
         )}
       </section>
     )
