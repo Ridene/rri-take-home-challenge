@@ -1,0 +1,26 @@
+@import "../variables";
+
+.jt__search {
+  &-container {
+    position: relative;
+    margin-bottom: 12px;
+
+    &:after {
+      position: absolute;
+      content: '';
+      height: 52px;
+      width: 1px;
+      left: 52px;
+      background-color: $jt-gray--15;
+    }
+
+    input {
+      padding-left: 60px;
+    }
+  }
+  &_icon-container {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+  }
+}
