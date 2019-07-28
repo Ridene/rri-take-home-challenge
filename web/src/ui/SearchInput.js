@@ -17,4 +17,18 @@ const SearchInput = ({word, onChange, placeholder, className}) => {
     </div>
   )
 }
+
+SearchInput.defaultProps = {
+  word: '',
+  placeholder: '',
+  className: ''
+}
+
+SearchInput.propTypes = {
+  word: PropTypes.string,
+  placeholder: PropTypes.string,
+  className: PropTypes.string,
+  onChange: PropTypes.func,
+}
+
 export default memo(SearchInput)

@@ -6,4 +6,12 @@ const Tag = ({tag}) => (
   </div>
 )
 
+Tag.defaultProps = {
+  tag: '',
+}
+
+Tag.propTypes = {
+  tag: PropTypes.string,
+}
+
 export default memo(Tag)
