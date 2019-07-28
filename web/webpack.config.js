@@ -32,8 +32,27 @@ module.exports = {
         }]
       },
       {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader"
+      },
+      {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: [
+          { loader: MiniCssExtractPlugin.loader },
+          { loader: 'css-loader', options: {}
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              ident: 'postcss',
+              plugins: [
+                require('autoprefixer'),
+              ]
+            }
+          },
+          { loader:'sass-loader' }
+        ]
       }
     ]
   },
