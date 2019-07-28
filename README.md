@@ -3,6 +3,8 @@
 You can run the application with 'npm' or 'yarn'
 
 ### Install dependencies
+Go to web folder  than 
+
 ``` npm install ```
 or
 ``` yarn install ```
