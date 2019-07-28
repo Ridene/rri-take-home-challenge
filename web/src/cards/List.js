@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import Loader from 'react-loader-spinner'
 
 import Card from './Card'
 import SearchInput from '../ui/SearchInput'
@@ -40,7 +41,17 @@ class List extends PureComponent {
 
   render () {
     const { cards, word } = this.state
-    if (this.props.loading) return <p>Loading</p>
+    if (this.props.loading) return (
+      <div className='loader-container'>
+        <Loader
+          type="Circles"
+          color="#4DCA42"
+          height="100"
+          width="100"
+        />
+        <h3>Welcome to Job teaser</h3>
+      </div>
+    )
 
     return (
       <>
