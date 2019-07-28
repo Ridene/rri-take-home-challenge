@@ -35,7 +35,7 @@ class List extends PureComponent {
       if (inName || inTags) return card
   })
 
-    this.setState({word: e.target.value, cards: filteredCards})
+    this.setState({word: event.target.value, cards: filteredCards})
   }
 
   render () {
@@ -44,7 +44,7 @@ class List extends PureComponent {
 
     return (
       <>
-        <header>
+        <header role='search'>
           <SearchInput
             placeholder='Que recherchez-vous ?'
             value={word}
@@ -52,7 +52,7 @@ class List extends PureComponent {
             onChange={this.handleChange}
           />
         </header>
-        <section className='jt__cards-container'>
+        <section className='jt__cards-container' role='listitem'>
           { cards.map(card =>
             <Card
               card={card}

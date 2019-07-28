@@ -32,15 +32,45 @@ module.exports = {
         }]
       },
       {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader"
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader",
+            options: { minimize: true }
+          }
+        ]
+      },
+      {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: [
+          { loader: MiniCssExtractPlugin.loader },
+          { loader: 'css-loader',
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              ident: 'postcss',
+              plugins: [
+                require('autoprefixer'),
+                require('cssnano'),
+                require('postcss-preset-env'),
+              ]
+            }
+          },
+          { loader:'sass-loader' }
+        ]
       }
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({template: path.join(__dirname, '/src/index.html')}),
     new MiniCssExtractPlugin({
-      filename: './dist/[name].css',
+      filename: '[name].css',
     }),
   ],
 };
