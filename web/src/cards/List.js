@@ -25,7 +25,7 @@ class List extends PureComponent {
     }
   }
 
-  handleChange = event =>  {
+  handleChange = event => {
     const{ cards } = this.props;
     const cleanValue = cleanWord(event.target.value)
 
@@ -41,6 +41,7 @@ class List extends PureComponent {
 
   render () {
     const { cards, word } = this.state
+
     if (this.props.loading) return (
       <div className='loader-container'>
         <Loader
@@ -58,7 +59,7 @@ class List extends PureComponent {
         <header role='search'>
           <SearchInput
             placeholder='Que recherchez-vous ?'
-            value={word}
+            word={word}
             className=''
             onChange={this.handleChange}
           />
